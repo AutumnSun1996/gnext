@@ -29,7 +29,7 @@ func (h *Handler) Docs(ctx *gin.Context) {
 
 	values := map[string]interface{}{
 		"title":   h.docs.OpenApi.Info.Title,
-		"jsonUrl": fmt.Sprintf("http://localhost:%s%s", h.port, h.docs.JsonUrl),
+		"jsonUrl": h.docs.JsonUrl,
 	}
 
 	err := h.template.Execute(ctx.Writer, values)
